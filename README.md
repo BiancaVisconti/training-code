@@ -8,4 +8,4 @@ the official training code
 
 ## license
 
-[MIT License]()
+[MIT License](https://github.com/BiancaVisconti/training-code/blob/master/LICENSE)
