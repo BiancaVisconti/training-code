@@ -1,5 +1,6 @@
 using System;
 using MediaWorld.Domain.Abstracts;
+using MediaWorld.Domain.Interfaces;
 
 namespace MediaWorld.Domain.Singletons
 {
@@ -17,7 +18,7 @@ namespace MediaWorld.Domain.Singletons
 
     private static AudioPlayer _ap = new AudioPlayer();
    
-    private AudioPlayer(){}
+    private AudioPlayer() {}
 
     //
     // public static AudioPlayer GetInstance()
@@ -35,14 +36,5 @@ namespace MediaWorld.Domain.Singletons
       }
     }
 
-    public void Play()
-    {
-
-    }
-
-    public void Stop()
-    {
-      throw new NotImplementedException();
-    }
   }
 }
