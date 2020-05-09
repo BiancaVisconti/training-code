@@ -9,7 +9,11 @@ namespace MediaWorld.Storage.Adapters
 {
   public class FileAdapter
   {
+    //worked with one .
     private static string _path = @"../medialib.xml";
+
+    //it didn't work with ..
+    //private static string _path = @"../medialib.xml";
     
     public static IEnumerable<AMedia> Read(string path = null)
     {

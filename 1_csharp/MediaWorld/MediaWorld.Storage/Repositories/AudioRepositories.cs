@@ -9,17 +9,11 @@ namespace MediaWorld.Storage.Repositories
   {
     private static readonly List<AAudio> _lib = new List<AAudio>()
     {
-      new Song() { Title = "Song 1"},
-      new Song() { Title = "Song 2"},
-      new Book() { Title = "Book 1"},
-      new Book() { Title = "Book 2"}
+      new Song() { Title = "Fly On"},
+      new Song() { Title = "Forever Young"},
+      new Book() { Title = "E.T."},
+      new Book() { Title = "Little Women"}
     };
-
-    public AudioRepository()
-    {
-      
-
-    }
 
     public IEnumerable<AMedia> List()
     {

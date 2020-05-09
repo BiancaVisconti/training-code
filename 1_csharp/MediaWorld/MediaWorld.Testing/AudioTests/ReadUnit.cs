@@ -8,7 +8,10 @@ namespace MediaWorld.Testing.AudioTests
 {
   public class ReadUnit
   {
+    //this is what fred had, only works if in the FileAdapter there is only one ., not two
     private IEnumerable<AMedia> fa = FileAdapter.Read("../../../../medialib.xml");
+
+    //private IEnumerable<AMedia> fa = FileAdapter.Read("../medialib.xml");
 
     [Fact]
     public void Test_ReturnsList()

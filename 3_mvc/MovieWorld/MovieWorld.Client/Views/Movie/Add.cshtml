@@ -1,0 +1,40 @@
+@model MovieWorld.Client.Models.MovieModel
+
+@*HTML WAY*@
+@*<form action="/movie/add" method="post">
+  <label for="title">@Model.Title</label>
+  <input type="text" name="title" id="title">
+
+  <label for="genre">@Model.Genre</label>
+  <input type="text" name="genre" id="genre">
+
+  <button type="submit">Add</button>
+</form>
+*@
+
+@*HTML HELPERS WAY*@
+@*@using (Html.BeginForm("add", "movie"))
+{
+  @Html.LabelFor(mm => mm.Title)
+  @Html.TextBoxFor(mm => mm.Title)
+
+  @Html.LabelFor(mm => mm.Genre)
+  @Html.TextBoxFor(mm => mm.Genre)
+
+  <button type="submit">Add</button>
+}
+*@
+
+@*TAG HELPER WAY*@
+<form action="/movie/add" method="post">
+  @Html.ValidationMessageFor(mm => mm.Title)
+  <label asp-for="Title">Title</label>
+  <input type="text" asp-for="Title">
+
+  @Html.ValidationMessageFor(mm => mm.Genre)
+  <label asp-for="Genre">Genre</label>
+  <input type="text" asp-for="Genre">
+
+  <button type="submit">Add</button>
+</form>
+

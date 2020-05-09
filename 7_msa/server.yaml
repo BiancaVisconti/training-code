@@ -1,0 +1,57 @@
+# apiVersion: apps/v1
+# kind: deployment
+# name: server-deployment-yaml
+# metadata:
+#   label: server-yaml
+# spec:
+#   container:
+#     name: nginx
+#     image: nginx
+
+# ---
+# apiVersion: apps/v1beta1
+# kind: service
+# name: server-service-yaml
+# metadata:
+#   label: server-yaml
+# spec:
+#   http:
+#     type: NodePort
+#     container: nginx
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: app
+  name: server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: app
+  template:
+    metadata:
+      labels:
+        run: app
+    spec:
+      containers:
+        - image: nginx
+          name: server
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: app
+  name: server
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    run: app
+  type: NodePort

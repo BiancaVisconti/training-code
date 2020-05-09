@@ -6,5 +6,11 @@ namespace MediaWorld.Storage.Repositories
   public class AudioRepositoryGeneric<T> where T : AAudio
   {
     public static readonly List<T> _lib = new List<T>();
+
+    public IEnumerable<AMedia> List()
+    {
+      return _lib;
+    }
   }
+
 }
